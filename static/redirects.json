@@ -1,0 +1,122 @@
+[
+    {
+        "path": ["appeal"],
+        "dest": "https://forms.gle/Mg7sfsK38YvQQSt58",
+        "type": 302
+    },
+    {
+        "path": ["asl"],
+        "dest": "https://raw.githubusercontent.com/p2sr/SourceAutoRecord/master/livesplit/sar.asl",
+        "type": 302
+    },
+    {
+        "path": ["autorender"],
+        "dest": "https://autorender.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["binder"],
+        "dest": "https://binder.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["board", "boards"],
+        "dest": "https://board.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["mel", "melboard", "melboards"],
+        "dest": "https://mel.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["catext"],
+        "dest": "https://www.speedrun.com/portal_2_category_extensions",
+        "type": 301
+    },
+    {
+        "path": ["commgolds", "commsob", "golds"],
+        "dest": "https://docs.google.com/spreadsheets/d/1vPjer8CKrV5Lh5_GKIZjKahODkrA8b2sMGSyR-LFMUY",
+        "type": 302
+    },
+    {
+        "path": ["discord"],
+        "dest": "https://discord.com/invite/hRwE4Zr",
+        "type": 301
+    },
+    {
+        "path": ["donate", "sponsor", "tip"],
+        "dest": "https://github.com/sponsors/p2sr",
+        "type": 302
+    },
+    {
+        "path": ["github", "gh"],
+        "dest": "https://github.com/p2sr",
+        "type": 301
+    },
+    {
+        "path": ["ghost"],
+        "dest": "https://ghost.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["lp"],
+        "dest": "https://lp.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["luma"],
+        "dest": "https://luma.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["rules"],
+        "dest": "https://rules.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["sar"],
+        "dest": "https://sar.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["sardl"],
+        "dest": "https://sardl.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["sm", "speedrunmod"],
+        "dest": "https://sm.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["src"],
+        "dest": "https://www.speedrun.com/portal_2",
+        "type": 301
+    },
+    {
+        "path": ["srconfigs"],
+        "dest": "https://github.com/p2sr/srconfigs/releases/latest",
+        "type": 301
+    },
+    {
+        "path": ["timeline"],
+        "dest": "https://timeline.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["twitch", "ttv"],
+        "dest": "https://twitch.tv/portal2speedruns",
+        "type": 301
+    },
+    {
+        "path": ["wiki"],
+        "dest": "https://wiki.portal2.sr",
+        "type": 302
+    },
+    {
+        "path": ["youtube", "yt"],
+        "dest": "https://youtube.com/channel/UCJisCoBmkhsSNRICJCLAY3w",
+        "type": 301
+    }
+]
