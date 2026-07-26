@@ -3,7 +3,7 @@ import { HonoWrapper } from "./HonoWrapper.ts";
 import { isDevMode } from "./Meta.ts";
 import { Logger } from "./Logger.ts";
 
-const PORT = 8080;
+const PORT = isDevMode() ? 8080 : 80;
 
 const app = new HonoWrapper();
 
