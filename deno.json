@@ -1,7 +1,7 @@
 {
     "tasks": {
-        "dev": "deno run --watch --allow-net --allow-read=./static src/Server.ts --dev",
-        "start": "deno run --allow-net --allow-read=./static --no-prompt src/Server.ts"
+        "dev": "deno run --watch=. --allow-net --allow-read=./static --allow-read=./templates src/Server.ts --no-prompt --dev",
+        "start": "deno run --allow-net --allow-read=./static --allow-read=./templates --no-prompt src/Server.ts"
     },
     "imports": {
         "@hono/hono": "jsr:@hono/hono@^4.12.32",
