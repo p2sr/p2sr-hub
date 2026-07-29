@@ -19,23 +19,11 @@ for (const redirect of redirects) {
     }
 }
 
-app.get("redirects", (c) => {
-    let html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Redirects</title></head><body><h1>Redirects</h1><ul>`;
-    for (const redirect of redirects) {
-        html += `<li><a href="${redirect.dest}">`;
-        for (const path of redirect.path) {
-            html += `<span style="padding-right: 0.5em;">${path}</span>`;
-        }
-        html += `</a></li>`;
-    }
-    html += `<hr><li><a href="redirects.json">redirects.json</a></li>`;
-    html += `<li><a href="redirects">this page</a></li>`;
-    html += `</ul></body></html>`;
-    return c.html(html, 200, {
-        "Cache-Control": `max-age=${STATIC_CACHE_SEC}`,
-        "Access-Control-Allow-Origin": "*"
-    });
-});
+const subst_vars = {
+    "REDIRECT_LIST_HTML": redirects.map((e: any) => {
+        return `<li><a href="${e.dest}">${e.path.join(", ")}</a></li>`;
+    }).join('\n')
+};
 
 {
     walk("./static", (filePath, isDir) => {
@@ -81,6 +69,14 @@ app.get("redirects", (c) => {
                 } else {
                     text += "\n" + indentedTemplateContent;
                 }
+            }
+
+            for (let i = text.indexOf("{{SUBST "); i !== -1; i = text.indexOf("{{SUBST ", i + 1)) {
+                const end = text.indexOf("}}", i);
+                if (end === -1) break;
+                const varName = text.slice(i + 8, end).trim();
+                const varValue = subst_vars[varName] || `Unknown variable: ${varName}`;
+                text = text.slice(0, i) + varValue + text.slice(end + 2);
             }
         }
 
