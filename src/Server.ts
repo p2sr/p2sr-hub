@@ -5,7 +5,7 @@ import { isDevMode } from "./Utils/Meta.ts";
 import { walk } from "./Utils/Walk.ts";
 
 const PORT = isDevMode() ? 8080 : 80;
-const STATIC_CACHE_SEC = isDevMode() ? 0 : 86400; // 1 day
+const STATIC_CACHE_SEC = isDevMode() ? 0 : 3600; // 1 hour
 
 const app = new HonoWrapper();
 
