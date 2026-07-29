@@ -1,14 +1,16 @@
 
 :root {
 	--bg-color: white;
+	--bg-secondary: #F0F0F0;
 	--text-color: black;
-	--background-gradient: radial-gradient(circle, #FFFFFF, #bfced8);
+	--bg-gradient: radial-gradient(circle, #FFFFFF, #bfced8);
 	--dashed: rgba(0,0,0,0.12);
 
 	@media (prefers-color-scheme: dark) {
 		--bg-color: #0F0F0F;
+		--bg-secondary: #1A1A1A;
 		--text-color: white;
-		--background-gradient: radial-gradient(circle, #000204, #09161b);
+		--bg-gradient: radial-gradient(circle, #000204, #09161b);
 		--dashed: rgba(255,255,255,0.12);
 		color-scheme: dark;
 	}
@@ -35,7 +37,7 @@ body > :not(#header):not(#footer) {
 }
 
 #header, #footer {
-	background: var(--background-gradient);
+	background: var(--bg-gradient);
 }
 #header {
 	box-shadow: 0 0 10px 0 black;
@@ -57,7 +59,7 @@ body > :not(#header):not(#footer) {
 #header img {
 	height: 90px;
 	border-radius: 25%;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: #292C31;
 	box-shadow: 0 0 10px 0 black;
 
 	@media (max-height: 750px) {
@@ -81,6 +83,9 @@ body > :not(#header):not(#footer) {
 }
 a {
 	color: var(--text-color);
+	text-decoration: underline dashed 1px;
+}
+a:has(img), #header a, #footer > a {
 	text-decoration: none;
 }
 #header-nav a {
@@ -106,10 +111,6 @@ a {
 #footer > a {
 	font-size: 3em;
 	margin: 0 15px;
-}
-
-p > a {
-	text-decoration: underline dashed 1px;
 }
 
 /* Content */
@@ -193,4 +194,13 @@ h3 {
 ul, ol {
 	padding-left: 15px;
 	text-align: left;
+}
+
+code, time {
+    padding: 1px 4px;
+
+    background: var(--bg-secondary);
+
+    border: 1px solid var(--dashed);
+    border-radius: 5px;
 }
