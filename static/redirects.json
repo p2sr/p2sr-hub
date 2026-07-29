@@ -60,7 +60,7 @@
         "type": 302
     },
     {
-        "path": ["lp"],
+        "path": ["lp", "leastportals"],
         "dest": "https://lp.portal2.sr",
         "type": 302
     },
