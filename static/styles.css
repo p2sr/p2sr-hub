@@ -99,16 +99,10 @@ a {
 
 #content {
 	width: stretch;
-	max-width: 120ch;
+	max-width: 125ch;
 	margin: auto;
 	padding: 1rem;
 }
-/* @media (min-width: 1145px) {
-	#content {
-		margin: auto;
-		min-width: 120ch;
-	}
-} */
 
 #footer {
 	box-shadow: 0 0 10px 0 black;
