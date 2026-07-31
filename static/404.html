@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 	 <head>
-		<meta http-equiv="refresh" content="1; url=https://portal2.sr/" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>404 Not Found</title>
-		<script>
-			window.location.href = `https://s.portal2.sr${window.location.pathname}`;
-		</script>
+		<link rel="dns-prefetch" href="//avatars.githubusercontent.com">
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+		<link rel="stylesheet" href="/styles.css">
+		<link rel="shortcut icon" type="image/png" href="https://avatars.githubusercontent.com/u/83299896" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css">
+
+		<meta name="title" content="404 Not Found">
+		<meta name="description" content="The page you are looking for does not exist.">
+		<meta name="og:title" content="404 Not Found">
+		<meta name="og:description" content="The page you are looking for does not exist.">
+		<meta property="og:image" content="/resource/logo.webp">
+		<meta property="og:image:alt" content="P2SR Logo">
 	 </head>
+	 <body>
+		<div id="header">
+			<div id="header-items">
+				<a href="https://github.com/p2sr" target="_blank"><img type="image/webp" src="/resource/logo.webp" alt="Logo"></a>
+				<h3>Portal 2 Speedrun Hub</h3>
+			</div>
+		</div>
+		<div id="content">
+			<div id="error-page">
+				<h1>404 Not Found</h1>
+				<p>The page you are looking for <span id="page-path"></span>does not exist.</p>
+				<p><a href="/">Return to the homepage</a></p>
+				<p>If you believe this is in error, contact us in the <a href="/discord" target="_blank">Discord server</a>, or make an issue on the <a href="https://github.com/p2sr/p2sr-hub/issues" target="_blank">GitHub repository</a>.</p>
+			</div>
+		</div>
+		<script>
+			document.getElementById("page-path").innerHTML = `(<code>${window.location.pathname}</code>) `;
+		</script>
+		<!-- {{TEMPLATE footer.html}} -->
+	 </body>
 </html>
