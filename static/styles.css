@@ -85,7 +85,7 @@ a {
 	color: var(--text-color);
 	text-decoration: underline dashed 1px;
 }
-a:has(img), #header a, #footer > a {
+#header a, #footer > a {
 	text-decoration: none;
 }
 #header-nav a {
@@ -98,10 +98,17 @@ a:has(img), #header a, #footer > a {
 }
 
 #content {
-	max-width: 100ch;
+	width: stretch;
+	max-width: 120ch;
 	margin: auto;
 	padding: 1rem;
 }
+/* @media (min-width: 1145px) {
+	#content {
+		margin: auto;
+		min-width: 120ch;
+	}
+} */
 
 #footer {
 	box-shadow: 0 0 10px 0 black;
@@ -134,34 +141,37 @@ h3 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 1em;
 	margin: 50px 0;
 }
 
 #home-items img {
 	/* width: 430px; */
-	max-width: 50%;
-	max-height: 280px;
+	max-height: 150px;
 	object-fit: contain;
 }
 
-#home-items div {
-	height: 280px;
-	margin: 0 0 50px 0;
+#home-items > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
 }
-
-:nth-child(even of #home-items div) {
-	img {
-		float: right;
-		margin-left: 25px;
-	}
-	text-align: right;
+#home-items > div div a {
+	text-decoration: none;
 }
-:nth-child(odd of #home-items div) {
-	img {
-		float: left;
-		margin-right: 25px;
+@media (min-width: 608px) {
+	#home-items > div {
+		flex-direction: row;
 	}
-	text-align: left;
+	:nth-child(even of #home-items > div) {
+		flex-direction: row-reverse;
+		text-align: right;
+	}
+	:nth-child(odd of #home-items > div) div {
+		text-align: left;
+	}
 }
 
 
@@ -169,7 +179,6 @@ h3 {
 
 #headshot {
 	display: grid;
-	grid-template-rows: 3;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
