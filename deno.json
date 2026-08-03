@@ -4,7 +4,7 @@
         "start": "deno run --allow-net --allow-read=./static --allow-read=./templates --no-prompt src/Server.ts"
     },
     "imports": {
-        "@hono/hono": "jsr:@hono/hono@^4.12.32",
+        "@hono/hono": "jsr:@hono/hono@^4.12.34",
         "@std/media-types": "jsr:@std/media-types@^1.1.0"
     }
 }
