@@ -70,6 +70,16 @@
         "type": 302
     },
     {
+        "path": ["modpacks"],
+        "dest": "https://drive.google.com/drive/folders/1kcDkGKFbo6yNB5VtB6M7v3FZFFG9SFgv",
+        "type": 302
+    },
+    {
+        "path": ["modpackrequest"],
+        "dest": "https://forms.gle/LVzXiyAnRNGqBJup8",
+        "type": 302
+    },
+    {
         "path": ["rules"],
         "dest": "https://rules.portal2.sr",
         "type": 302
