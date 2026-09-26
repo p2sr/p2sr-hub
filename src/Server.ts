@@ -28,10 +28,8 @@ const subst_vars = {
 
 function serveHTML(text: string, runtime: boolean): string {
 	// replace templates
-	if (runtime) {
-		// {{SETSUBT}} and {{SUBST}}
-	} else {
-		// {{TEMPLATE}} and {{SUBST}}
+	if (!runtime) {
+		// {{TEMPLATE}}
 		for (let i = text.indexOf("{{TEMPLATE "); i !== -1; i = text.indexOf("{{TEMPLATE ", i + 1)) {
 			const end = text.indexOf("}}", i);
 			if (end === -1) break;
@@ -55,14 +53,44 @@ function serveHTML(text: string, runtime: boolean): string {
 				text += "\n" + indentedTemplateContent;
 			}
 		}
+	}
+	let subst_vars_page = {
+		"TITLE": "Portal 2 Speedrun Hub",
+		"DESCRIPTION": "The community hub for Portal 2 Speedrunning. Find resources, leaderboards, guides, and more!",
+		"REDIRECT_LIST_HTML": redirects.map((e: any) => {
+			return `<li><a href="${e.dest}">${e.path.join(", ")}</a></li>`;
+		}).join('\n')
+	};
+	let subst_vars_rt = {};
 
-		for (let i = text.indexOf("{{SUBST "); i !== -1; i = text.indexOf("{{SUBST ", i + 1)) {
+	if (!runtime) {
+		// {{SETSUBST}}
+		for (let i = text.indexOf("{{SETSUBST "); i !== -1; i = text.indexOf("{{SETSUBST ", i + 1)) {
 			const end = text.indexOf("}}", i);
 			if (end === -1) break;
-			const varName = text.slice(i + 8, end).trim();
-			const varValue = subst_vars[varName] || `Unknown variable: ${varName}`;
-			text = text.slice(0, i) + varValue + text.slice(end + 2);
+			const varStr = text.slice(i + 11, end).trim();
+			const varName = varStr.split(' ')[0];
+			const varValue = varStr.slice(varName.length + 1);
+			subst_vars_page[varName] = varValue;
 		}
+	}
+	// {{SUBST}}
+	for (let i = text.indexOf("{{SUBST "); i !== -1; i = text.indexOf("{{SUBST ", i + 1)) {
+		const end = text.indexOf("}}", i);
+		if (end === -1) break;
+		const varName = text.slice(i + 8, end).trim();
+		let varValue = `Unknown variable: ${varName}`;
+		if (varName.startsWith("RT_")) {
+			// runtime substitution
+			if (runtime) {
+				varValue = subst_vars_rt[varName] || varValue;
+			} else {
+				continue;
+			}
+		} else {
+			varValue = subst_vars_page[varName] || varValue;
+		}
+		text = text.slice(0, i) + varValue + text.slice(end + 2);
 	}
 	return text;
 }
