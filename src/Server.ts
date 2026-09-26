@@ -3,6 +3,7 @@ import { HonoWrapper } from "./HonoWrapper.ts";
 import { Logger } from "./Logger.ts";
 import { isDevMode } from "./Utils/Meta.ts";
 import { walk } from "./Utils/Walk.ts";
+import { createHash } from "node:crypto";
 
 const PORT = isDevMode() ? 8080 : 80;
 const STATIC_CACHE_SEC = isDevMode() ? 0 : 3600; // 1 hour
@@ -93,19 +94,23 @@ function serveHTML(text: string, runtime: boolean): string {
 
 		const requestPath = filePath.slice("./static".length) + (isDir ? "/" : "");
 		if (text != textInitial) {
+			const etag = createHash("sha256").update(text).digest('hex');
 			app.get(requestPath, (c) => {
 				return c.body(text, 200, {
 					"Content-Type": mime,
 					"Cache-Control": `max-age=${STATIC_CACHE_SEC}`,
-					"Access-Control-Allow-Origin": "*"
+					"Access-Control-Allow-Origin": "*",
+					"ETag": etag
 				});
 			});
 		} else {
+			const etag = createHash("sha256").update(data).digest('hex');
 			app.get(requestPath, (c) => {
 				return c.body(data, 200, {
 					"Content-Type": mime,
 					"Cache-Control": `max-age=${STATIC_CACHE_SEC}`,
-					"Access-Control-Allow-Origin": "*"
+					"Access-Control-Allow-Origin": "*",
+					"ETag": etag
 				});
 			});
 		}

@@ -26,9 +26,11 @@ export class Logger {
 
     static error(text: string) : void {
         console.error(`%c${Logger.getTimestamp()}E: ${text}`, "color: red");
+        console.error(`%c${new Error().stack?.split('\n').slice(2).join('\n')}`, "color: red");
     }
 
     static errorHonoContext(text: string, req: HonoRequest) {
         console.error(`%c${Logger.getTimestamp()}E(HTTP): ${text}\n${Deno.inspect(req)}\n`, "color: red");
+        console.error(`%c${new Error().stack?.split('\n').slice(2).join('\n')}`, "color: red");
     }
 }

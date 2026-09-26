@@ -1,7 +1,7 @@
 [
     {
         "path": ["appeal"],
-        "dest": "https://forms.gle/Mg7sfsK38YvQQSt58",
+        "dest": "https://docs.google.com/forms/d/e/1FAIpQLSeuMmRKzciMyPUWgMA2nZLU3g4R83sIN0dklFE0jUG_WscvMA/viewform",
         "type": 302
     },
     {
@@ -21,12 +21,12 @@
     },
     {
         "path": ["board", "boards"],
-        "dest": "https://board.portal2.sr",
+        "dest": "https://board.portal2.sr/changelog",
         "type": 302
     },
     {
         "path": ["mel", "melboard", "melboards"],
-        "dest": "https://mel.portal2.sr",
+        "dest": "https://mel.portal2.sr/changelog",
         "type": 302
     },
     {
@@ -36,7 +36,7 @@
     },
     {
         "path": ["commgolds", "commsob", "golds"],
-        "dest": "https://docs.google.com/spreadsheets/d/1vPjer8CKrV5Lh5_GKIZjKahODkrA8b2sMGSyR-LFMUY",
+        "dest": "https://docs.google.com/spreadsheets/d/1vPjer8CKrV5Lh5_GKIZjKahODkrA8b2sMGSyR-LFMUY/edit",
         "type": 302
     },
     {
@@ -76,7 +76,7 @@
     },
     {
         "path": ["modpackrequest"],
-        "dest": "https://forms.gle/LVzXiyAnRNGqBJup8",
+        "dest": "https://docs.google.com/forms/d/e/1FAIpQLSe5C2h9o1S10B2fRB63NB6cHyPOrYYrYgJVuBKLRpwvwz_Kcw/viewform",
         "type": 302
     },
     {
@@ -121,12 +121,12 @@
     },
     {
         "path": ["wiki"],
-        "dest": "https://wiki.portal2.sr",
+        "dest": "https://wiki.portal2.sr/Main_Page",
         "type": 302
     },
     {
         "path": ["youtube", "yt"],
-        "dest": "https://youtube.com/channel/UCJisCoBmkhsSNRICJCLAY3w",
+        "dest": "https://www.youtube.com/channel/UCJisCoBmkhsSNRICJCLAY3w",
         "type": 301
     }
 ]
